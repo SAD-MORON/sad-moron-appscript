@@ -11,4 +11,7 @@ It inherits connector contracts from [sad-moron-connectors](https://github.com/S
 - No cross-package hidden coupling.
 - Deployment is controlled and auditable.
 
+
+**First implementation must start as a read-only Google Sheets metadata test.**
+
 Associated pending study script ID: `1vZ4sal938gPqhXWTbdzUgEQV-8F2C5Sjro7Ixnx8dPrKLXy5b6LI2viW`
