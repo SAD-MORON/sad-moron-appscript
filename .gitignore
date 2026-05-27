@@ -25,6 +25,7 @@ __pycache__/
 *.tmp
 *~
 
+
 # Apps Script
 .clasp.json
 .claspignore
@@ -32,3 +33,7 @@ __pycache__/
 # Environment
 .env
 .env.*
+
+# Credentials and tokens
+credentials*
+token*
