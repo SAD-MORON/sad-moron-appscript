@@ -1,0 +1,14 @@
+SAD-MORON AppScript
+Apps Script profiling / taxonomy / onboarding layer
+
+Initial governance architecture:
+Martín Nicolás Sánchez Morales
+
+Governance principles derived from Janus Core are selectively applied through the SAD Framework.
+
+This repository is licensed under the Apache License, Version 2.0.
+You may obtain a copy of the License in the LICENSE file or at:
+http://www.apache.org/licenses/LICENSE-2.0
+
+Real operational deployments, credentials, production Sheet IDs, institutional mappings,
+runtime integrations, and sensitive integrations may remain external/private or separately governed.
