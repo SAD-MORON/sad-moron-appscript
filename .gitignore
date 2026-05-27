@@ -29,6 +29,13 @@ __pycache__/
 # Apps Script
 .clasp.json
 .claspignore
+.clasp.credentials.json
+*.clasp.local.json
+*.apps-script-local.json
+local-script-ids.json
+local-appscript-references.json
+deployments.local.json
+deployment-artifacts/
 
 # Environment
 .env

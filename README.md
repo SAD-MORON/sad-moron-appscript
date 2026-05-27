@@ -10,8 +10,11 @@ It inherits connector contracts from [sad-moron-connectors](https://github.com/S
 - No unrestricted automation.
 - No cross-package hidden coupling.
 - Deployment is controlled and auditable.
+- Apps Script IDs are local-only operational references.
+- Real IDs must never be committed.
+- Governance repositories must remain identifier-safe.
 
 
 **First implementation must start as a read-only Google Sheets metadata test.**
 
-Associated pending study script ID: `1vZ4sal938gPqhXWTbdzUgEQV-8F2C5Sjro7Ixnx8dPrKLXy5b6LI2viW`
+Associated pending study script ID: `LOCAL_ONLY_REFERENCE_NOT_COMMITTED`
