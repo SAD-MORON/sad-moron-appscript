@@ -16,20 +16,22 @@
  *   - Structural block estimation
  *
  * Constraints:
- *   - Use SHEET_ID_PLACEHOLDER only
+ *   - Use SpreadsheetApp.getActiveSpreadsheet() for bound-sheet tests
  *   - Never persist or log sampled cell content
  *   - Never read full rows or bulk worksheet bodies
  *   - Never write, trigger, export, or deploy
  */
 function profileSpreadsheetLayout_Scaffold() {
-  var ss = SpreadsheetApp.openById("SHEET_ID_PLACEHOLDER");
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
   var sheets = ss.getSheets();
-
-  return {
+  var profile = {
     spreadsheetName: ss.getName(),
     sheetCount: sheets.length,
     sheetProfiles: sheets.map(profileSheetLayout_Scaffold_)
   };
+
+  Logger.log(JSON.stringify(profile, null, 2));
+  return profile;
 }
 
 /**
@@ -81,8 +83,6 @@ function inferSparseOccupancy_Scaffold_(sheet, rowCount, colCount) {
   });
 
   return {
-    sampledRowIndexes: sampledRows,
-    sampledColumnIndexes: sampledColumns,
     occupiedRowEstimate: occupiedRows,
     emptyRowEstimate: sampledRows.length - occupiedRows,
     occupiedColumnEstimate: occupiedColumns,
