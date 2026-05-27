@@ -18,5 +18,36 @@
  *   - No credential persistence
  */
 function getSpreadsheetMetadata_Scaffold() {
-  // TODO: Implement metadata-only logic
+  // Metadata-only: connect using placeholder Sheet ID
+  var ss = SpreadsheetApp.openById("SHEET_ID_PLACEHOLDER");
+
+  // Get spreadsheet name
+  var spreadsheetName = ss.getName();
+
+  // Get all sheets and their names
+  var sheets = ss.getSheets();
+  var sheetNames = sheets.map(function(sheet) {
+    return sheet.getName();
+  });
+
+  // Count sheets
+  var sheetCount = sheets.length;
+
+  // Attempt to get last updated timestamp (if available via getLastUpdated, else null)
+  var lastUpdated = null;
+  if (typeof ss.getLastUpdated === 'function') {
+    try {
+      lastUpdated = ss.getLastUpdated();
+    } catch (e) {
+      lastUpdated = null;
+    }
+  }
+
+  // Return metadata object only
+  return {
+    spreadsheetName: spreadsheetName,
+    sheetNames: sheetNames,
+    sheetCount: sheetCount,
+    lastUpdated: lastUpdated
+  };
 }
