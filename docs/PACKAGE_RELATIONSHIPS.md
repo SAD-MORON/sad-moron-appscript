@@ -22,7 +22,7 @@
 - `semantic-layout-profiling`:
   depends on layout profiling and institutional zone interpretation boundaries
 - `pofa-layout-taxonomy`:
-  depends on structural and semantic layout signals for topology classification
+  depends on structural and semantic layout signals for topology classification with level, modality, year, and institutional format context
 - `semantic-field-inference`:
   depends on bounded semantic interpretation discipline
 - `sheet-registry`:
@@ -46,6 +46,7 @@
 - `real-sheet-profiling` must not skip authorization status
 - `semantic-field-inference` must not depend on row-export behavior
 - `pofa-layout-taxonomy` must not depend on person-level semantics
+- `pofa-layout-taxonomy` must not compare unlike modalities or levels as if they belonged to the same family unless a human override is explicitly documented
 - `metadata-test` must not silently evolve into structure or semantic reads
 - no package may bypass `audit/` or `reports/` evidence expectations through hidden automation
 
@@ -55,7 +56,7 @@
 - after `structure-read`: confirm header-row boundary
 - after `layout-profiling`: confirm structure-only bounded sampling
 - after `semantic-layout-profiling`: confirm zone-only output and ambiguity handling
-- after `pofa-layout-taxonomy`: confirm topology-only fingerprinting and drift classification
+- after `pofa-layout-taxonomy`: confirm topology-only fingerprinting, level/modality classification, and like-with-like drift comparison
 - after `semantic-field-inference`: confirm field-level, not person-level, inference
 - after `sheet-registry`: confirm authorization and identifier-safe onboarding
 - after `real-sheet-profiling`: confirm readiness gate before controlled real profiling
@@ -71,7 +72,8 @@
 
 - no extraction gate opens during synthetic-only packages
 - no real-sheet profiling begins before registry authorization
-- no extraction eligibility review begins until fingerprinting, semantic interpretation, and drift baseline are complete
+- no extraction eligibility review begins until fingerprinting, level/modality classification, semantic interpretation, and drift baseline are complete
+- unknown modality or unknown level forces `REVIEW`, not `PASS`
 - unresolved ambiguity or unresolved drift forces `REVIEW` or `BLOCKED`
 
 ## Relationship Rule

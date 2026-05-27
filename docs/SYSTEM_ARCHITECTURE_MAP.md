@@ -48,6 +48,7 @@ This repository inherits governance authority from `sad-moron-framework` and con
 - metadata before structure
 - structure before semantic interpretation
 - semantic interpretation before extraction eligibility review
+- POFA taxonomy must be level-aware, modality-aware, year-aware, and format-aware
 - local-only identifiers
 - no credentials in Git
 - no hidden coupling between packages
@@ -104,12 +105,12 @@ This repository inherits governance authority from `sad-moron-framework` and con
 
 ### `pofa-layout-taxonomy`
 
-- objective: create topology fingerprints, layout families, and drift comparison scaffolds
-- allowed operations: topology hashes, merge topology, header topology, compatibility scoring, drift severity
+- objective: create topology fingerprints, layout family registries, and drift comparison scaffolds across level, modality, year, and institutional format dimensions
+- allowed operations: topology hashes, merge topology, header topology, level/modality context, compatibility scoring, drift severity
 - prohibited operations: personal profiling, full exports, writes, triggers, deployment
 - current maturity: synthetic-ready
 - dependency level: architecture classification layer
-- governance risk level: medium
+- governance risk level: high
 
 ### `semantic-field-inference`
 
@@ -143,3 +144,4 @@ This repository inherits governance authority from `sad-moron-framework` and con
 - `audit/` artifacts capture evidence and review logic, but never authorize extraction by themselves
 - `reports/` capture observed outcomes and phased plans, but must remain identifier-safe and non-sensitive
 - `docs/` define the architectural truth used to prevent package drift and unsafe sequencing
+- POFA-like structures must never be treated as one universal family; examples include `Inicial`, `Primaria`, `Secundaria`, `Tecnica`, `Especial`, `Psicologia`, `Adultos`, `Artistica`, and `Educacion Fisica`

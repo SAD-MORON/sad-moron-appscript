@@ -34,25 +34,28 @@ No structural profiling should begin until these onboarding steps are complete.
 
 1. Start from an authorized sheet context
 2. Build structural topology
-3. Record layout family classification
-4. Produce fingerprint reference and drift-ready baseline
-5. Route evidence to audit and review
+3. Record level dimension, modality dimension, year/version dimension, and institutional format dimension when available
+4. Record layout family classification
+5. Produce fingerprint reference and modality-specific baseline
+6. Route evidence to audit and review
 
 ## Semantic Inference Flow
 
 1. Confirm topology and structural boundaries
-2. Run bounded field-category inference
-3. Record ambiguity classification
-4. Escalate unclear semantics to review
+2. Confirm level/modality context or explicitly record that it is unknown
+3. Run bounded field-category inference
+4. Record ambiguity classification
+5. Escalate unclear semantics to review
 
 ## Extraction Eligibility Review Flow
 
 1. Confirm authorization remains valid
 2. Confirm metadata registry is complete
 3. Confirm fingerprint baseline exists
-4. Confirm semantic layout and field inference have been reviewed
-5. Confirm drift baseline is resolved
-6. Decide `PASS`, `REVIEW`, or `BLOCKED`
+4. Confirm level/modality classification exists or an explicit human override is documented
+5. Confirm semantic layout and field inference have been reviewed
+6. Confirm drift baseline is resolved using like-with-like comparison
+7. Decide `PASS`, `REVIEW`, or `BLOCKED`
 
 Extraction eligibility review is not extraction. It is the final governance gate before any future extraction engine could even be considered.
 
@@ -62,6 +65,8 @@ Extraction eligibility review is not extraction. It is the final governance gate
 - sensitivity escalation
 - ambiguous semantics
 - unresolved drift
+- unknown modality or level
+- unlike-family comparison attempted without explicit override
 - governance review required
 - identifier leakage detected
 - unexpected package coupling detected
